@@ -4,9 +4,14 @@
 #include <iostream>
 using namespace std;
 
-float average_salary(int employees, float *salary) 
+float average_salary(int employees, const float *salary) 
 {
-
+    float money = 0;
+    for (int i = 0; i < employees; i++) {
+        money = money + salary[i];
+    }
+    money = money / employees;
+    return money;
 }
 
 int main()
@@ -15,8 +20,8 @@ int main()
     cout << "Enter total number of employees\n";
     int employees;
     cin >> employees;
-    float *salary[employees];
-    for (int i = 0; i == employees; i++) {
+    float *salary = new float[employees];
+    for (int i = 0; i < employees; i++) {
         cout << "Enter salary of employee :" << i + 1 << "\n";
         cin >> salary[i];
     }
