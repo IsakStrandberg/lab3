@@ -39,7 +39,7 @@ bool search(const vector<string>* p)
 {
     bool check = true;
     string search;
-    cout << " search: ";
+    cout << "search: ";
     cin >> search;
     int len = search.length();
     for (int b = 0; b < p->size(); b++) {
@@ -81,7 +81,7 @@ bool deleting(vector<string>* p)
 void print(const vector<string>* p)
 {
     for (int t = 0; t < p->size(); t++) {
-        cout << (*p)[t];//hmm
+        cout << (*p)[t] << "\n";//hmm
     }
     return;
 }
@@ -91,6 +91,7 @@ void save(vector<string>* p)
     string fileName;
     cout << "input file name to save to:\n";
     cin >> fileName;
+    fileName = fileName + ".txt";
 
     ofstream file;
 
@@ -107,7 +108,7 @@ void save(vector<string>* p)
 bool load(vector<string>* p)
 {
     bool check = true;
-    p->clear();
+    (*p).clear();
 
     ifstream file;
 
@@ -143,9 +144,9 @@ int vectorBaseStart()
 
     while (true) {
         int choice = 0;
-        cout << "Menu:\n1.initialise database\n2.insert\n3.search\n4.delete\n5.print\n6.save\7.load\n8.quit\nMake your choice(enter number): \n";
+        cout << "Menu:\n1.initialise database\n2.insert\n3.search\n4.delete\n5.print\n6.save\n7.load\n8.quit\nMake your choice(enter number): \n";
         cin >> choice;
-        if (choice == 0 || choice > 6 || choice < 0) {
+        if (choice == 0 || choice > 8 || choice < 0) {
             cout << "not a valid choice\n";
         }
         else if (choice == 1) {
